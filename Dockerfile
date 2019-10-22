@@ -20,4 +20,7 @@ RUN make qvm
 RUN pip3 install qiskit
 RUN pip3 install qiskit-terra[visualization]
 
+# Additional
+RUN apt-get install vim nano -y
+
 CMD ["/bin/bash"]
