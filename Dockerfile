@@ -11,16 +11,26 @@ RUN pip3 install pyquil
 RUN pip3 install --upgrade pyquil
 RUN apt-get install liblapack-dev libblas-dev libffi-dev libzmq3-dev sbcl -y
 
-RUN git clone --recurse-submodules https://github.com/rigetti/quilc.git
-RUN make quilc
+# RUN git clone --recurse-submodules https://github.com/rigetti/quilc.git
+# RUN cd quilc
+# RUN make quilc
 
-RUN git clone --recurse-submodules https://github.com/rigetti/qvm.git
-RUN make qvm
+# RUN cd ../
+
+# RUN git clone --recurse-submodules https://github.com/rigetti/qvm.git
+# RUN cd qvm
+# RUN make qvm
+
+# RUN wget https://beta.quicklisp.org/quicklisp.lisp
+
 
 RUN pip3 install qiskit
 RUN pip3 install qiskit-terra[visualization]
 
 # Additional
 RUN apt-get install vim nano -y
+
+# Clean
+RUN apt-get clean
 
 CMD ["/bin/bash"]
